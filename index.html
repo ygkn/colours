@@ -1189,7 +1189,7 @@
 
     input[type="radio"][value="colorful"],
     body[data-color="colorful"] {
-      animation: 10s animateHSLColors infinite;
+      animation: 1s animateHSLColors infinite;
     }
 
     button {
@@ -1216,7 +1216,7 @@
   </style>
 </head>
 
-<body data-color="colorful">
+<body data-color="red">
   <main>
     <h1>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62 68.4">
@@ -1236,7 +1236,7 @@
     </h1>
     <ul>
       <li>
-        <input type='radio' name='colors' value='red'>
+        <input type='radio' name='colors' value='red' checked>
       </li>
       <li>
         <input type='radio' name='colors' value='blue'>
@@ -1251,7 +1251,7 @@
         <input type='radio' name='colors' value='white'>
       </li>
       <li>
-        <input type='radio' name='colors' value='colorful' checked>
+        <input type='radio' name='colors' value='colorful'>
       </li>
     </ul>
     <button>
