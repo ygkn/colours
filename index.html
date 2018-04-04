@@ -1262,14 +1262,39 @@
   <script>
     $main = document.querySelector('main');
 
+
+    const fullscreenEnabled =
+      document.fullscreenEnabled ||
+      document.webkitFullscreenEnabled ||
+      document.mozFullScreenEnabled ||
+      document.msFullscreenEnabled ||
+      false
+
     document.querySelector('button').addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       $main.classList.add('hidden');
+
+      if (fullscreenEnabled) {
+        document.body[[
+          "requestFullscreen",
+          "webkitRequestFullScreen",
+          "mozRequestFullScreen",
+          "msRequestFullscreen"
+        ].find(name => document.body[name] != null)]();
+      }
     });
 
     document.body.addEventListener('click', (e) => {
       $main.classList.remove('hidden');
+      if (fullscreenEnabled) {
+        document[[
+          "exitFullscreen",
+          "webkitExitFullscreen",
+          "mozCancelFullScreen",
+          "msExitFullscreen"
+        ].find(name => document[name] != null)]();
+      }
     });
 
     document
